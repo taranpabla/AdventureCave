@@ -6,20 +6,18 @@ public class AdventureCave {
         Random randomGenerator = new Random();
 
         // Welcome the player to the game
-        System.out.println("Welcome, traveler, "
-                + "to the Cave of Wonders!"
-                + " Adventures await!");
+        System.out.println("Welcome, traveler, to the Cave of Wonders! Adventures await!");
 
         // Initialize player name and level
         int playerLevel = 1;
-        String playerName = "Horatio";
+        String playerName = "null";
         double playerHealth = 100.0;
         Scanner playerInput = new Scanner(System.in);
 
         System.out.println( "What is your name?");
         playerName = playerInput.nextLine();
 
-        System.out.println( "You are " + playerName + " , a level " + playerLevel + " adventurer.");
+        System.out.println( "You are " + playerName + ", a level " + playerLevel + " adventurer.");
 
         // Arithmetic with variables
         System.out.println("You made it to the entrance of the cave.");
@@ -31,14 +29,10 @@ public class AdventureCave {
         double rockDamage = randomGenerator.nextInt(5);
         System.out.println("A treacherous rock ambushes you.");
         playerHealth -= rockDamage;
-        System.out.println("You took " + rockDamage
-                + " damage. You have " + playerHealth
-                + " health remaining.");
+        System.out.println("You took " + rockDamage + " damage. You have " + playerHealth + " health remaining.");
 
         if( playerHealth <= 0 ){
-            System.out.println("Oh no, "
-                    + playerName +" died! They were level "
-                    + playerLevel);
+            System.out.println("Oh no, " + playerName +" died! They were level " + playerLevel);
             System.exit(0);
         }
 
@@ -79,7 +73,7 @@ public class AdventureCave {
                 + "\nWould you like to 'befriend' it, 'fight' it or 'run' away?" );
         // get player's answer
         playerAnswer = playerInput.nextLine();
-        
+
         /* If Statements
          * For choice 2
          */
