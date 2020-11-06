@@ -13,13 +13,11 @@ public class AdventureCave {
         String playerName = "null";
         double playerHealth = 100.0;
         Scanner playerInput = new Scanner(System.in);
-
         System.out.println( "What is your name?");
         playerName = playerInput.nextLine();
 
-        System.out.println( "You are " + playerName + ", a level " + playerLevel + " adventurer.");
 
-        // Arithmetic with variables
+        System.out.println( "You are " + playerName + ", a level " + playerLevel + " adventurer.");
         System.out.println("You made it to the entrance of the cave.");
         playerLevel = playerLevel + 1;
         System.out.println("You leveled up. You are now level " + playerLevel);
@@ -101,9 +99,7 @@ public class AdventureCave {
                         + playerName +" died! They were level "
                         + playerLevel);
                 System.exit(0);
-
             }
-
         }
         else if(playerAnswer.equalsIgnoreCase("run")){ // Run if player typed "run"
             System.out.println("You turn tail and run. The slime does not pursue you.\n"
