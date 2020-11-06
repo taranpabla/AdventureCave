@@ -12,16 +12,17 @@ public class AdventureCave {
         int playerLevel = 1;
         String playerName = "null";
         double playerHealth = 100.0;
+
         Scanner playerInput = new Scanner(System.in);
         System.out.println( "What is your name?");
         playerName = playerInput.nextLine();
-
 
         System.out.println( "You are " + playerName + ", a level " + playerLevel + " adventurer.");
         System.out.println("You made it to the entrance of the cave.");
         playerLevel = playerLevel + 1;
         System.out.println("You leveled up. You are now level " + playerLevel);
 
+        //_________End of Level 1_________
 
         // Rock falling and causing damage
         double rockDamage = randomGenerator.nextInt(5);
@@ -34,13 +35,15 @@ public class AdventureCave {
             System.exit(0);
         }
 
-        String playerAnswer;
+
+
         System.out.println("You are in a cave."
                 + "\nThere is a dark path to the left."
                 + "\nThere is a pile of rubble to the right."
                 + "\nWould you like to go 'left' or 'right'?");
-        // get player's answer
-        playerAnswer = playerInput.nextLine();
+
+        String playerAnswer;
+        playerAnswer = playerInput.nextLine();    // get player's answer
 
         if(playerAnswer.equalsIgnoreCase("right")){
             System.out.println("You climb up the pile of rubble. It leads to a small cavern."
@@ -75,7 +78,7 @@ public class AdventureCave {
         /* If Statements
          * For choice 2
          */
-        if(playerAnswer.equalsIgnoreCase("befriend")){ // Run if player typed "befriend"
+        if(playerAnswer.equalsIgnoreCase("befriend")){
             System.out.println("You say hello to the slime and offer it some of your food.\n"
                     + "The slime dissolves your food. It burbles less menacingly and leads you to a magic hat."
                     + "\nYou found a magic hat!");
@@ -83,7 +86,7 @@ public class AdventureCave {
             playerLevel = playerLevel + 1;
             System.out.println("You leveled up. You are now level " + playerLevel);
         }
-        else if(playerAnswer.equalsIgnoreCase("fight")){ // Run if player typed "left"
+        else if(playerAnswer.equalsIgnoreCase("fight")){
             System.out.println("You hit the slime with your sword and it dissolves.\n"
                     + "The slime burbles angrily and sprays some acid at you.");
             playerLevel = playerLevel + 1;
@@ -94,14 +97,13 @@ public class AdventureCave {
                     + " health remaining.");
             // Check if damage killed the player
             if( playerHealth <= 0 ){
-
                 System.out.println("Oh no, "
                         + playerName +" died! They were level "
                         + playerLevel);
                 System.exit(0);
             }
         }
-        else if(playerAnswer.equalsIgnoreCase("run")){ // Run if player typed "run"
+        else if(playerAnswer.equalsIgnoreCase("run")){
             System.out.println("You turn tail and run. The slime does not pursue you.\n"
                     + "You fall into a healing spring while running.");
             double healing = 3.5; // Heal the player
