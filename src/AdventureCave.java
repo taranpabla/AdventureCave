@@ -12,6 +12,7 @@ public class AdventureCave {
         int playerLevel = 1;
         String playerName = "null";
         double playerHealth = 100.0;
+        String playerAnswer;
 
         Scanner playerInput = new Scanner(System.in);
         System.out.println( "What is your name?");
@@ -36,13 +37,8 @@ public class AdventureCave {
         }
 
 
+        System.out.println("You are in a cave." + "\nThere is a dark path to the left." + "\nThere is a pile of rubble to the right." + "\nWould you like to go 'left' or 'right'?");
 
-        System.out.println("You are in a cave."
-                + "\nThere is a dark path to the left."
-                + "\nThere is a pile of rubble to the right."
-                + "\nWould you like to go 'left' or 'right'?");
-
-        String playerAnswer;
         playerAnswer = playerInput.nextLine();    // get player's answer
 
         if(playerAnswer.equalsIgnoreCase("right")){
@@ -55,25 +51,17 @@ public class AdventureCave {
             System.out.println("The path gets very dark. Another cunning rock ambushes you.");
             rockDamage = 4.0;
             playerHealth -= rockDamage;
-            System.out.println("You took " + rockDamage
-                    + " damage. You have " + playerHealth
-                    + " health remaining.");
+            System.out.println("You took " + rockDamage + " damage. You have " + playerHealth + " health remaining.");
             // Check if damage killed the player
-            if( playerHealth <= 0 ){
-
-                System.out.println("Oh no, "
-                        + playerName +" died! They were level "
-                        + playerLevel);
+            if(playerHealth <= 0){
+                System.out.println("Oh no, " + playerName +" died! They were level " + playerLevel);
                 System.exit(0);
-
             }
         }
 
         // Room 2 Description
-        System.out.println("There is a small slime here. It burbles at you menacingly."
-                + "\nWould you like to 'befriend' it, 'fight' it or 'run' away?" );
-        // get player's answer
-        playerAnswer = playerInput.nextLine();
+        System.out.println("There is a small slime here. It burbles at you menacingly." + "\nWould you like to 'befriend' it, 'fight' it or 'run' away?" );
+        playerAnswer = playerInput.nextLine();  // get player's answer
 
         /* If Statements
          * For choice 2
