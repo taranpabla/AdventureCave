@@ -49,13 +49,14 @@ public class AdventureCave {
         }
         else if(playerAnswer.equalsIgnoreCase("left")){
             System.out.println("The path gets very dark. Another cunning rock ambushes you.");
-            rockDamage = 4.0;
+            rockDamage = 105.0;
             playerHealth -= rockDamage;
             System.out.println("You took " + rockDamage + " damage. You have " + playerHealth + " health remaining.");
             // Check if damage killed the player
             if(playerHealth <= 0){
-                System.out.println("Oh no, " + playerName +" died! They were level " + playerLevel);
-                System.exit(0);
+                //System.out.println("Oh no, " + playerName +" died! They were level " + playerLevel);
+                //System.exit(0);
+                checkHealth(playerName, playerLevel);
             }
         }
 
@@ -104,6 +105,12 @@ public class AdventureCave {
 
 
         playerInput.close();
+    }
+
+
+    public static void checkHealth(String name, Integer level) {
+        System.out.println("Oh no, " + name +" died! They were level " + level);
+        System.exit(0);
     }
 
 }
