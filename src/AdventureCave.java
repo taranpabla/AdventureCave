@@ -17,7 +17,6 @@ public class AdventureCave {
         System.out.println("You leveled up. You are now level " + playerLevel);
     }
 
-
     public static void main(String[] args) {
         Random randomGenerator = new Random();
 
@@ -57,9 +56,7 @@ public class AdventureCave {
         playerAnswer = playerInput.nextLine();    // get player's answer
 
         if(playerAnswer.equalsIgnoreCase("right")){
-            System.out.println("You climb up the pile of rubble. It leads to a small cavern."
-                    + "\nThere is a treasure chest here. It is full of treasure.");
-
+            System.out.println("You climb up the pile of rubble. It leads to a small cavern." + "\nThere is a treasure chest here. It is full of treasure.");
             levelUp();
         }
         else if(playerAnswer.equalsIgnoreCase("left")){
