@@ -98,8 +98,23 @@ public class AdventureCave {
         }
 
         //_________Start of Level 3_________
+        System.out.println("As you walk deeper into the cave you notice somthing out of the corner or your eye" + "\nWould you like to 'see' it, or 'ignore' it?" );
+        playerAnswer = playerInput.nextLine();  // get player's answer
 
+        if(playerAnswer.equalsIgnoreCase("see")){
+            System.out.println("Blank.\n" + "Blank.." + "\nBlank.!");
 
+            levelUp();
+        }
+        else if(playerAnswer.equalsIgnoreCase("ignore")){
+            System.out.println("Blank..\n" + "Blank.");
+
+            double healing = 3.5; // Heal the player
+            playerHealth += healing;
+            System.out.println("You were healed for " + healing + ". Your health is now " + playerHealth);
+
+            levelUp();
+        }
 
         // End
         System.out.println(playerName + " survived the Cave of Wonders! You made it to level "+ playerLevel);
