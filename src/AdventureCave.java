@@ -68,7 +68,7 @@ public class AdventureCave {
             levelUp();
         }
 
-        // Room 2.2 Description
+        // _________Start of Level 3_________
         System.out.println("There is a small slime here. It burbles at you menacingly." + "\nWould you like to 'befriend' it, 'fight' it or 'run' away?" );
         playerAnswer = playerInput.nextLine();  // get player's answer
 
@@ -97,7 +97,7 @@ public class AdventureCave {
             levelUp();
         }
 
-        //_________Start of Level 3_________
+        //_________Start of Level 4_________
         System.out.println("As you walk deeper into the cave you notice somthing out of the corner or your eye" + "\nWould you like to 'see' it, or 'ignore' it?" );
         playerAnswer = playerInput.nextLine();  // get player's answer
 
@@ -115,6 +115,8 @@ public class AdventureCave {
 
             levelUp();
         }
+
+        // _________Start of Level 5_________
 
         // End
         System.out.println(playerName + " survived the Cave of Wonders! You made it to level "+ playerLevel);
