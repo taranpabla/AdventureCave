@@ -20,7 +20,6 @@ public class AdventureCave {
     public static void main(String[] args) {
         Random randomGenerator = new Random();
 
-        // Welcome the player to the game
         System.out.println("Welcome, traveler, to the Cave of Wonders! Adventures await!");
 
         // Initialize player name and level
@@ -50,8 +49,6 @@ public class AdventureCave {
         }
 
         // _________Start of Level 2_________
-
-        //Room 2.1 Description
         System.out.println("You are in a cave." + "\nThere is a dark path to the left." + "\nThere is a pile of rubble to the right." + "\nWould you like to go 'left' or 'right'?");
         playerAnswer = playerInput.nextLine();    // get player's answer
 
@@ -98,7 +95,7 @@ public class AdventureCave {
         }
 
         //_________Start of Level 4_________
-        System.out.println("As you walk deeper into the cave you notice somthing out of the corner or your eye" + "\nWould you like to 'see' it, or 'ignore' it?" );
+        System.out.println("As you walk deeper into the cave you notice something out of the corner or your eye" + "\nWould you like to 'see' it, or 'ignore' it?" );
         playerAnswer = playerInput.nextLine();  // get player's answer
 
         if(playerAnswer.equalsIgnoreCase("see")){
