@@ -100,7 +100,7 @@ public class AdventureCave {
 
         if(playerAnswer.equalsIgnoreCase("see")){
             System.out.println("Blank.\n" + "Blank.." + "\nBlank.!");
-
+            checkHealth(playerHealth, playerName, playerLevel);
             levelUp();
         }
         else if(playerAnswer.equalsIgnoreCase("ignore")){
@@ -109,7 +109,7 @@ public class AdventureCave {
             double healing = 3.5; // Heal the player
             playerHealth += healing;
             System.out.println("You were healed for " + healing + ". Your health is now " + playerHealth);
-
+            checkHealth(playerHealth, playerName, playerLevel);
             levelUp();
         }
 
