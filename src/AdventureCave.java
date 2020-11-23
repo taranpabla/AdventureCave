@@ -71,26 +71,21 @@ public class AdventureCave {
 
         if(playerAnswer.equalsIgnoreCase("befriend")){
             System.out.println("You say hello to the slime and offer it some of your food.\n" + "The slime dissolves your food. It burbles less menacingly and leads you to a magic hat." + "\nYou found a magic hat!");
-
             levelUp();
         }
         else if(playerAnswer.equalsIgnoreCase("fight")){
             System.out.println("You hit the slime with your sword and it dissolves.\n" + "The slime burbles angrily and sprays some acid at you.");
-
             rockDamage = 5.0;
             playerHealth -= rockDamage;
             System.out.println("You took " + rockDamage + " damage. You have " + playerHealth + " health remaining.");
             checkHealth(playerHealth, playerName, playerLevel);
-
             levelUp();
         }
         else if(playerAnswer.equalsIgnoreCase("run")){
             System.out.println("You turn tail and run. The slime does not pursue you.\n" + "You fall into a healing spring while running.");
-
             double healing = 3.5; // Heal the player
             playerHealth += healing;
             System.out.println("You were healed for " + healing + ". Your health is now " + playerHealth);
-
             levelUp();
         }
 
