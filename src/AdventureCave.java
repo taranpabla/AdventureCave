@@ -94,7 +94,7 @@ public class AdventureCave {
         playerAnswer = playerInput.nextLine();  // get player's answer
 
         if(playerAnswer.equalsIgnoreCase("see")){
-            System.out.println("Blank.\n" + "Blank.." + "\nBlank.!");
+            System.out.println("Ohh no you were attacked by a rogue \n" + "Blank.." + "\nBlank.!");
             checkHealth(playerHealth, playerName, playerLevel);
             levelUp();
         }
