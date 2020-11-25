@@ -108,8 +108,6 @@ public class AdventureCave {
             levelUp();
         }
 
-        // _________Start of Level 5_________
-
         // End
         System.out.println(playerName + " survived the Cave of Wonders! You made it to level "+ playerLevel);
         playerInput.close();
