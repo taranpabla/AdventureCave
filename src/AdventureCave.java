@@ -17,6 +17,12 @@ public class AdventureCave {
         System.out.println("You leveled up. You are now level " + playerLevel);
     }
 
+    public static void exitSequence(String name) {
+        // End of Program
+        System.out.println(name + " survived the Cave of Wonders! You made it to level " + playerLevel);
+        System.exit(0);
+    }
+
     public static void main(String[] args) {
         Random randomGenerator = new Random();
 
@@ -26,8 +32,9 @@ public class AdventureCave {
         String playerName;
         double playerHealth = 100.0;
         String playerAnswer;
-        double damage = randomGenerator.nextInt(10);
+        double damage;
         double healing;
+        boolean isValid = true;
 
         Scanner playerInput = new Scanner(System.in);
         System.out.println( "What is your name?");
@@ -36,21 +43,32 @@ public class AdventureCave {
         // _________Start of Level 1_________
         System.out.println( "You are " + playerName + ", a level " + playerLevel + " adventurer.");
         System.out.println("You made it to the entrance of the cave.");
-        playerLevel += 1;
-        System.out.println("You leveled up. You are now level " + playerLevel);
 
-        // Rock falling and causing damage
-        System.out.println("A treacherous rock ambushes you.");
-        playerHealth -= damage;
-        System.out.println("You took " + damage + " damage. You have " + playerHealth + " health remaining.");
 
-        if( playerHealth <= 0 ){
-            System.out.println("Oh no, " + playerName +" died! They were level " + playerLevel);
-            System.exit(0);
-        }
+        do {
+            System.out.println("Would you like to go 'enter' or 'leave'?");
+            playerAnswer = playerInput.nextLine();    // get player's answer
+
+            if (playerAnswer.equalsIgnoreCase("enter")) {
+                System.out.println("A treacherous rock ambushes you.");
+                damage = randomGenerator.nextInt(10);
+                playerHealth -= damage;
+                System.out.println("You took " + damage + " damage. You have " + playerHealth + " health remaining.");
+                checkHealth(playerHealth, playerName, playerLevel);
+                levelUp();
+                break;
+
+            } else if (playerAnswer.equalsIgnoreCase("leave")) {
+                System.out.println("Looks like you are not as brave as you thought you were.");
+                exitSequence(playerName);
+            } else {
+                System.out.println("Invalid input ");
+            }
+        } while (isValid);
+
 
         // _________Start of Level 2_________
-        boolean isValid = true;
+
 
         do {
             System.out.println("You are in a cave." + "\nThere is a dark path to the left." + "\nThere is a pile of rubble to the right." + "\nWould you like to go 'left' or 'right'?");
@@ -128,8 +146,7 @@ public class AdventureCave {
             }
         }while(isValid);
 
-        // End of Program
-        System.out.println(playerName + " survived the Cave of Wonders! You made it to level " + playerLevel);
+        exitSequence(playerName);
         playerInput.close();
     }
 }
