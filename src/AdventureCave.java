@@ -28,7 +28,7 @@ public class AdventureCave {
 
         System.out.println("Welcome, traveler, to the Cave of Wonders! Adventures await!");
 
-        // Initialize player name and level
+        // Initialize vars
         String playerName;
         double playerHealth = 100.0;
         String playerAnswer;
@@ -43,7 +43,6 @@ public class AdventureCave {
         // _________Start of Level 1_________
         System.out.println( "You are " + playerName + ", a level " + playerLevel + " adventurer.");
         System.out.println("You made it to the entrance of the cave.");
-
 
         do {
             System.out.println("Would you like to go 'enter' or 'leave'?");
@@ -68,8 +67,6 @@ public class AdventureCave {
 
 
         // _________Start of Level 2_________
-
-
         do {
             System.out.println("You are in a cave." + "\nThere is a dark path to the left." + "\nThere is a pile of rubble to the right." + "\nWould you like to go 'left' or 'right'?");
             playerAnswer = playerInput.nextLine();    // get player's answer
